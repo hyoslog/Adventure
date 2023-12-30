@@ -6,7 +6,6 @@
 #include "GameFramework/Actor.h"
 #include "ADWeapon.generated.h"
 
-class USkeletalMesh;
 class USkeletalMeshComponent;
 
 UCLASS()
@@ -14,14 +13,10 @@ class AADWeapon : public AActor
 {
 	GENERATED_BODY()
 	
-public:	
-	// Sets default values for this actor's properties
+public:
 	AADWeapon();
 
 private:
 	UPROPERTY()
 	TObjectPtr<USkeletalMeshComponent> Mesh;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Mesh, meta = (AllowPrivateAccess = "true"))
-	TObjectPtr<USkeletalMesh> Asset;
 };
