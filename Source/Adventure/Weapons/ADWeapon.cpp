@@ -1,12 +1,11 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "ADWeapon.h"
+#include "Logging/LogMacros.h"
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateWeapon, Log, All);
 DEFINE_LOG_CATEGORY(LogTemplateWeapon);
 
-// Sets default values
 AADWeapon::AADWeapon()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
@@ -22,12 +21,5 @@ AADWeapon::AADWeapon()
 	RootComponent = Mesh;
 
 	Mesh->SetSkeletalMesh(Asset);
-}
-
-// Called when the game starts or when spawned
-void AADWeapon::BeginPlay()
-{
-	Super::BeginPlay();
-	
 }
 

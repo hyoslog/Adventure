@@ -1,22 +1,19 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "Logging/LogMacros.h"
-#include "AdventureCharacter.generated.h"
+#include "ADCharacter.generated.h"
 
-class USpringArmComponent;
 class UCameraComponent;
-class UInputMappingContext;
+class USpringArmComponent;
 class UInputAction;
+class UInputMappingContext;
 struct FInputActionValue;
 
-DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
-
 UCLASS()
-class AAdventureCharacter : public ACharacter
+class AADCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
@@ -45,11 +42,10 @@ class AAdventureCharacter : public ACharacter
 	UInputAction* LookAction;
 
 public:
-	AAdventureCharacter();
+	AADCharacter();
 	
 
 protected:
-
 	/** Called for movement input */
 	void Move(const FInputActionValue& Value);
 
@@ -67,6 +63,7 @@ protected:
 public:
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
+
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
 };
