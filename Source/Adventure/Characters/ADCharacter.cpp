@@ -11,6 +11,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "InputActionValue.h"
 #include "Logging/LogMacros.h"
+#include "..\Weapons\ADWeapon.h"
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
@@ -120,4 +121,17 @@ void AADCharacter::Look(const FInputActionValue& Value)
 		AddControllerYawInput(LookAxisVector.X);
 		AddControllerPitchInput(LookAxisVector.Y);
 	}
+}
+
+void AADCharacter::EquipWeapon(AADWeapon* InWeapon)
+{
+	if (InWeapon == nullptr)
+	{
+		check(0);
+		return;
+	}
+
+	const FName WeaponSocket(TEXT("hand_rSocket"));
+	InWeapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, WeaponSocket);
+	InWeapon->SetOwner(this);
 }

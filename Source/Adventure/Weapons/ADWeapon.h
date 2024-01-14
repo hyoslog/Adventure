@@ -17,6 +17,6 @@ public:
 	AADWeapon();
 
 private:
-	UPROPERTY()
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = ADWeapon, meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<USkeletalMeshComponent> Mesh;
 };

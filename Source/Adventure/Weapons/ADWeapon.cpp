@@ -5,4 +5,7 @@
 
 AADWeapon::AADWeapon()
 {
+	Mesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Mesh"));
+	check(Mesh);
+	SetRootComponent(Mesh);
 }

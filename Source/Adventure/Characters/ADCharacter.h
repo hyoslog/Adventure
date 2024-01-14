@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "ADCharacter.generated.h"
 
+class AADWeapon;
 class UCameraComponent;
 class USpringArmComponent;
 class UInputAction;
@@ -66,5 +67,7 @@ public:
 
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
-};
 
+public:
+	void EquipWeapon(AADWeapon* InWeapon);
+};
